@@ -1,0 +1,16 @@
+body {
+  margin: 0px;
+}
+
+#wraper {
+  background-color: #88bdbc;
+}
+
+.imgStyle {
+  height: auto;
+  max-width: 100px;
+}
+
+.header {
+  background-color: #6e6658;
+}
