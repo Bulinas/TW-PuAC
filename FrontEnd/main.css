@@ -8,9 +8,26 @@ body {
 
 .imgStyle {
   height: auto;
-  max-width: 100px;
+  max-width: 75px;
 }
 
 .header {
   background-color: #6e6658;
+  display: flex;
+}
+
+.button-header {
+  background-color: #88bdbc;
+  color: #f2fae6;
+  margin: 0px;
+  padding: 5px;
+  border: 10px;
+  border-width: 2px;
+  border-style: solid;
+  border-color: black;
+  /* urat!! repara :)) */
+}
+
+.button-header:hover {
+  background-color: #254e58;
 }

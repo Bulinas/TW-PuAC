@@ -9,12 +9,23 @@ img.classList.add("imgStyle");
 
 // button items
 let buttonItems = document.createElement("button");
+buttonItems.innerText = 'Products';
+buttonItems.classList.add('button-header');
+buttonItems.setAttribute('href', './main.html');
 
 // button advisers
 let buttonAdvisers = document.createElement("button");
+buttonAdvisers.innerText = 'Advisers';
+buttonAdvisers.classList.add('button-header');
+buttonAdvisers.addEventListener('click', function(){
+    this.setAttribute('href', './adviser/adviser.html');
+})
 
 // button settings
 let buttonSettings = document.createElement("button");
+buttonSettings.innerText = 'Settings';
+buttonSettings.classList.add('button-header');
+
 
 // add to header and export
 header.appendChild(img);
