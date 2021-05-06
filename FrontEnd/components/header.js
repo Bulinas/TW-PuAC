@@ -18,14 +18,14 @@ let buttonAdvisers = document.createElement("button");
 buttonAdvisers.innerText = 'Advisers';
 buttonAdvisers.classList.add('button-header');
 buttonAdvisers.addEventListener('click', function(){
-    this.setAttribute('href', './adviser/adviser.html');
+    this.setAttribute('href', './adviser/adviser.html');    // ???????
 })
 
 // button settings
 let buttonSettings = document.createElement("button");
 buttonSettings.innerText = 'Settings';
 buttonSettings.classList.add('button-header');
-
+buttonSettings.setAttribute('href', './settings/settings.html');    // ????
 
 // add to header and export
 header.appendChild(img);
