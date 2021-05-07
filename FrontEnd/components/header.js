@@ -27,10 +27,18 @@ buttonSettings.innerText = 'Settings';
 buttonSettings.classList.add('button-header');
 buttonSettings.setAttribute('href', './settings/settings.html');    // ????
 
+
+// button login
+let buttonLogin = document.createElement("button");
+buttonLogin.innerText = 'Login';
+buttonLogin.classList.add('button-header');
+buttonLogin.setAttribute('href', './login/login.html');    // ????
+
 // add to header and export
 header.appendChild(img);
 header.appendChild(buttonItems);
 header.appendChild(buttonAdvisers);
 header.appendChild(buttonSettings);
+header.appendChild(buttonLogin);
 
 export { header };
