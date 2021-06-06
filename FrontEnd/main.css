@@ -1,33 +1,165 @@
-body {
-  margin: 0px;
-}
-
-#wraper {
-  background-color: #88bdbc;
-}
-
-.imgStyle {
-  height: auto;
-  max-width: 75px;
-}
-
-.header {
-  background-color: #6e6658;
+.card-wrapper {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.button-header {
-  background-color: #88bdbc;
-  color: #f2fae6;
-  margin: 0px;
-  padding: 5px;
-  border: 10px;
-  border-width: 2px;
+.card {
+  background-color: #6e6658;
+  width: 75%;
   border-style: solid;
   border-color: black;
-  /* urat!! repara :)) */
+  border-radius: 4px;
+  border-width: 2px;
+  margin: 5px;
 }
 
-.button-header:hover {
-  background-color: #254e58;
+.card-info-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  width: 100%;
+  height: 220px;
+
+  padding: 12px;
+
+  font-size: 24px;
+}
+
+.card-info-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 12px 12px 0 12px;
+}
+
+.product-info-description {
+  font-weight: 600;
+}
+
+.product-description {
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+
+  padding: 6px;
+}
+
+.card-info-top-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: 40px;
+}
+
+.card-info-top-wrapper div {
+  width: 33.3%;
+}
+
+.card-info-bottom-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  height: calc(100% - 40px);
+}
+
+.card-image-wrapper {
+  width: 196px;
+  height: 196px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-image-wrapper img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 8px;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
+
+.active,
+.accordion:hover {
+  background-color: #ccc;
+}
+
+.panel {
+  padding: 0 18px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
+}
+
+.comment {
+  border: black;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 2px;
+  margin: 3px;
+}
+
+.add-button {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+
+  font-size: 40px;
+  font-weight: 600;
+
+  border-radius: 50%;
+  background-color: #444;
+
+  width: 60px;
+  height: 60px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.add-button:hover {
+  cursor: pointer;
+  font-size: 42px;
+}
+
+.settings-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding: 12px;
+  font-size: 48px;
+}
+
+.settings-input {
+  font-size: 48px;
+}
+
+.adviser-button {
+  font-size: 48px;
+  margin: 24px;
 }

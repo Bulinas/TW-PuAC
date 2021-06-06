@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="../main.css">
+    <title>Settings</title>
 </head>
+
 <body>
-    <p>
-        ce e asta??
-    </p>
+    <div id="wraper">
+        <!-- Insert Here -->
+
+    </div>
+    <div class="settings-wrapper">
+        <div>Enter adviser name:</div>
+        <input type="text" class="settings-input" id="settings-inp">
+        <button onclick="adviserRequest()" class="adviser-button">Add adviser</button>
+        <div>Response:</div>
+        <div id="settings-response"></div>
+    </div>
+    <script src="../components/requests.js"></script>
+    <script src="../components/auth.js"></script>
+    <script src="../components/header.js"></script>
+    <script src="settings.js"></script>
 </body>
+
 </html>
