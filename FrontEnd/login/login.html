@@ -1,25 +1,31 @@
 <html>
-    <head>
-        <title>Login and Registration</title>
-        <link rel="stylesheet" href="login.css">
-    </head>
-    <body>
-        <div class="login-page">
-            <div class="form">
-                <form class="register-form">
-                    <input type="text" placeholder="user name"/>
-                    <input type="text" placeholder="password"/>
-                    <input type="text" placeholder="email id"/>
-                    <button>Create</button>
-                    <p class="message">Already registered? <a href="#">Login</a></p>
-                </form>
-                <form class="login-form">
-                    <input type="text" placeholder="user name"/>
-                    <input type="password" placeholder="password"/>
-                    <button>login</button>
-                    <p class="message">Not registered? <a href="#">Register</a></p>
-                </form>
+
+<head>
+    <title>Login and Registration</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <div class="login-page">
+        <div class="form">
+            <div class="widget hidden-form">
+                <input type="text" class="register-username" placeholder="user name" />
+                <input type="password" class="register-password" placeholder="password" />
+                <input type="text" class="register-email" placeholder="email id" />
+                <button onclick="register()">Create</button>
+                <p class="message">Already registered? <a href="#" onclick="switchForm()">Login</a></p>
+            </div>
+            <div class="widget">
+                <input type="text" class="login-username" placeholder="user name" />
+                <input type="password" class="login-password" placeholder="password" />
+                <button onclick="login()">Login</button>
+                <p class="message">Not registered? <a href="#" onclick="switchForm()">Register</a></p>
             </div>
         </div>
-    </body>
+    </div>
+
+    <script src="../components/requests.js"></script>
+    <script src="./login.js"></script>
+</body>
+
 </html>

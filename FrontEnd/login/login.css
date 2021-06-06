@@ -1,13 +1,14 @@
-body{
+body {
     background-color: #88bdbc;
-}
-.login-page{
+  }
+  
+  .login-page {
     width: 360px;
     padding: 10% 0 0;
     margin: auto;
-}
-
-.form{
+  }
+  
+  .form {
     position: relative;
     z-index: 1;
     background: #ffffff;
@@ -15,9 +16,13 @@ body{
     margin: 0 auto 100px;
     padding: 45px;
     text-align: center;
-}
-
-.form input{
+  }
+  
+  form {
+    margin-block-end: 0;
+  }
+  
+  .form input {
     font-family: "Roboto", sans-serif;
     outline: 1;
     background: #f2f2f2;
@@ -27,9 +32,9 @@ body{
     padding: 15px;
     box-sizing: border-box;
     font-size: 14px;
-}
-
-.form button{
+  }
+  
+  .form button {
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
     outline: 0;
@@ -38,32 +43,32 @@ body{
     border: 0;
     padding: 15px;
     color: #ffffff;
-    font-size: 14px;;
+    font-size: 14px;
     cursor: pointer;
-
-}
-
-.form button:hover, .form button:active{
+  }
+  
+  .form button:hover,
+  .form button:active {
     background: #254e58;
-}
-
-.form .message{
+  }
+  
+  .form .message {
     margin: 15px 0 0;
-    color:#254e58;
+    color: #254e58;
     font-size: 12px;
-
-}
-
-.form .message a{
+  }
+  
+  .form .message a {
     color: #112d32;
     text-decoration: none;
-}
-
-.form .message a:hover, .form .message a:active{
+  }
+  
+  .form .message a:hover,
+  .form .message a:active {
     color: #254e58;
     text-decoration: solid; /*nu stiu ce sa ii fac aiici*/
-}
-
-.form .register-form{
+  }
+  
+  .hidden-form {
     display: none;
-}
+  }
