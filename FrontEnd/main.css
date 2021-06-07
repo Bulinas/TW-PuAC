@@ -114,13 +114,6 @@
   overflow: hidden;
 }
 
-.comment {
-  border: black;
-  border-style: solid;
-  border-radius: 3px;
-  border-width: 2px;
-  margin: 3px;
-}
 
 .add-button {
   position: fixed;
@@ -162,4 +155,19 @@
 .adviser-button {
   font-size: 48px;
   margin: 24px;
+}
+
+comment {
+  border: black;
+  border-style: solid;
+  border-radius: 3px;
+  border-width: 2px;
+  margin: 3px;
+  display: flex;
+  flex-direction: column;
+}
+infocontainer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

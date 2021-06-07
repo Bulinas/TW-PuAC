@@ -77,10 +77,9 @@ class Card {
 
   formatData() {
     // To be modify when integrated with back-end
-    for (let i = 0; i < 5; i++) {
-      let comment = document.createElement("div");
-      comment.innerText = this.data;
-      comment.classList.add("comment");
+    for (let i = 0; i < this.data.comments.length; i++) {
+      let comment = new Comment(this.data.comments[i]).commentContainer;
+      console.log(comment.commentContainer)
       this.comments.appendChild(comment);
     }
   }

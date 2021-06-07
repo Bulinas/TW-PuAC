@@ -1,5 +1,5 @@
 const Database = require("../database/database");
-
+const ObjectID = require("mongodb").ObjectID;
 const TokenUtils = require("../utils/token");
 
 const Ok = require("../responses/ok");
@@ -56,10 +56,19 @@ class ProductsController {
       if (tokenInfo.status == false) {
         return new BadRequest("You have to be authenticated!");
       }
+      let products = await this.database.getAllByFilter("products", {
+        userId: tokenInfo.token.id,
+      })
+      for (let i = 0; i < products.length; i++) {
+        let comments = await this.database.getAllByFilter("comments", { product_id: ObjectID(products[i].userId) })
+        for (let j = 0; j < comments.length; j++) {
+          const advisor = await this.database.getByFilter("advisers", { _id: ObjectID(comments[j].advisor_id) })
+          comments[j].advisor_name = advisor.name;
+        }
+        products[i].comments = comments;
+      }
       return new Ok(
-        await this.database.getAllByFilter("products", {
-          userId: tokenInfo.token.id,
-        })
+        products
       );
     }
   };
