@@ -4,7 +4,7 @@ class Card {
   constructor(data) {
     // data for the card
     this.data = data;
-
+    this.addCommentsCard = new AddCommentCard(data._id, "60be1bac4fe63a355cfdcf95"); 
     // wrapper for the card
     this.wrapper = document.createElement("div");
     this.wrapper.classList.add("card");
@@ -58,6 +58,16 @@ class Card {
 
     this.viewCommentsButton = document.createElement("div");
     this.viewCommentsButton.innerText = "View comments";
+    this.addCommentButton = document.createElement("div");
+    this.addCommentButton.classList.add("add-comment") 
+    this.addCommentButton.innerText = "Add comment";
+    this.addCommentButton.addEventListener("click", ()=>{
+        this.addCommentsCard.showPopUp();
+    })
+    
+    this.buttonsContainer = document.createElement("buttons-container");
+    this.buttonsContainer.appendChild(this.viewCommentsButton);
+    this.buttonsContainer.appendChild(this.addCommentButton);
 
     this.comments = document.createElement("div");
 
@@ -68,7 +78,8 @@ class Card {
 
     // apend everything
 
-    this.commentsInfo.appendChild(this.viewCommentsButton);
+    this.commentsInfo.appendChild(this.buttonsContainer);
+
     this.commentsInfo.appendChild(this.comments);
 
     this.wrapper.appendChild(this.cardInfo);
@@ -77,6 +88,7 @@ class Card {
 
   formatData() {
     // To be modify when integrated with back-end
+    console.log(this.data)
     for (let i = 0; i < this.data.comments.length; i++) {
       let comment = new Comment(this.data.comments[i]).commentContainer;
       console.log(comment.commentContainer)

@@ -60,7 +60,7 @@ class ProductsController {
         userId: tokenInfo.token.id,
       })
       for (let i = 0; i < products.length; i++) {
-        let comments = await this.database.getAllByFilter("comments", { product_id: ObjectID(products[i].userId) })
+        let comments = await this.database.getAllByFilter("comments", { product_id: ObjectID(products[i]._id) })
         for (let j = 0; j < comments.length; j++) {
           const advisor = await this.database.getByFilter("advisers", { _id: ObjectID(comments[j].advisor_id) })
           comments[j].advisor_name = advisor.name;

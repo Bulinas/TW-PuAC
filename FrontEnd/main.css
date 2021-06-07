@@ -171,3 +171,18 @@ infocontainer{
   flex-direction: row;
   justify-content: space-between;
 }
+buttons-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.add-comment{
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 8px;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+}
