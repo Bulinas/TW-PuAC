@@ -2,8 +2,11 @@ const Ok = require("../responses/ok");
 const Created = require("../responses/created");
 const BadRequest = require("../responses/bad-request");
 const MethodNotAllowed = require("../responses/method-not-allowed");
+const Deleted = require("../responses/deleted");
 
 const Database = require("../database/database");
+const ObjectID = require("mongodb").ObjectID;
+const TokenUtils = require("../utils/token");
 
 const crypto = require("crypto");
 
@@ -24,6 +27,7 @@ class AdvisersController {
   };
 
   solve = async (req, res) => {
+    let tokenUtils = new TokenUtils();
     if (req.method === "POST" && req.url === "/advisers") {
       if (!req.body) {
         return new BadRequest("Missing body!");
@@ -33,14 +37,43 @@ class AdvisersController {
       }
       let randomUrl = getRandomBytes(32);
 
+      let tokenInfo = tokenUtils.extractToken(req, res);
+
+      if (tokenInfo.status == false) {
+        return new BadRequest("You have to be authenticated!");
+      }
+
       let newAdviser = {
         name: req.body.name,
         randomURL: randomUrl,
+        userId: tokenInfo.token.id,
       };
 
       let createdAdviser = await this.database.insert("advisers", newAdviser);
 
       return new Created(createdAdviser);
+    } else if (req.method === "GET" && req.url === "/advisers") {
+      let tokenInfo = tokenUtils.extractToken(req, res);
+      if ((tokenInfo.status = false)) {
+        return new BadRequest("You have to be authenticated!");
+      }
+      let advisers = await this.database.getAllByFilter("advisers", {
+        userId: tokenInfo.token.id,
+      });
+      return new Ok(advisers);
+    } else if (req.method === "DELETE" && req.url.match(/\/advisers\/(.*)/)) {
+      // console.log("Here!");
+
+      let str = req.url;
+      str = str.substring(str.length - 24);
+
+      let filter = {
+        _id: ObjectID(str),
+      };
+
+      let resp = await this.database.delete("advisers", filter);
+
+      return new Deleted(resp);
     }
   };
 }

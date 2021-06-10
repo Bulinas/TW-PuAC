@@ -37,6 +37,10 @@ class Database {
     obj._id = insertedObj.insertedId;
     return obj;
   };
+
+  delete = async (collection, filter) => {
+    return await this.db.collection(collection).deleteOne(filter);
+  };
 }
 
 module.exports = Database;

@@ -23,7 +23,10 @@ function adviserRequest() {
 
   post("http://localhost:5000/advisers", obj, (status, response) => {
     if (status == 201) {
-      console.log(JSON.parse(response));
+      let resp = JSON.parse(response);
+      console.log(resp);
+      let respElement = document.getElementById("settings-response");
+      respElement.innerText = "http://localhost:8080/" + resp.randomURL;
     } else {
       console.log("ERROR WHILE ADDING ADVISER");
       console.log(response);

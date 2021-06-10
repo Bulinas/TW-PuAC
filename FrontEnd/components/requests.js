@@ -31,3 +31,16 @@ function get(url, callback) {
     }
   };
 }
+
+function deleteObj(url, callback) {
+  let xmlhttp = new XMLHttpRequest();
+  xmlhttp.open("DELETE", url);
+  addToken(xmlhttp);
+  xmlhttp.send();
+
+  xmlhttp.onreadystatechange = function () {
+    if (this.readyState == 4) {
+      callback(this.status, xmlhttp.responseText);
+    }
+  };
+}
