@@ -74,6 +74,12 @@ class AdvisersController {
       let resp = await this.database.delete("advisers", filter);
 
       return new Deleted(resp);
+    } else if (req.method === "GET" && req.url.match(/\/advisers\/(.*)/)) {
+      let filter = {
+        randomURL: req.url,
+      };
+      console.log(req.url);
+      return new BadRequest("ceva");
     }
   };
 }

@@ -26,7 +26,7 @@ function adviserRequest() {
       let resp = JSON.parse(response);
       console.log(resp);
       let respElement = document.getElementById("settings-response");
-      respElement.innerText = "http://localhost:8080/" + resp.randomURL;
+      respElement.innerText = "http://localhost:8090/" + resp.randomURL;
     } else {
       console.log("ERROR WHILE ADDING ADVISER");
       console.log(response);
